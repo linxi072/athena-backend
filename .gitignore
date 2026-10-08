@@ -1,0 +1,49 @@
+# ===== Java / Maven =====
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# Maven 本地仓库与构建缓存
+.mvn/
+mvnw
+mvnw.cmd
+
+# ===== Node / UniApp / Vue（前端）=====
+node_modules/
+dist/
+unpackage/
+.hbuilderx/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===== IDE =====
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+
+# ===== OS / 通用 =====
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.editorconfig
+
+# ===== 密钥 / 本地覆盖（切勿提交）=====
+*.local.yml
+*.local.properties
+application-secret.yml
+.env
+*.pem
+*.key

@@ -1,0 +1,33 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: mini-multirole
+  # 本期内存仓储，无需数据库；接入 MyBatis-Plus 时在此配置 datasource
+  datasource:
+    # 占位：实际部署时启用
+    # url: jdbc:mysql://localhost:3306/mini?useSSL=false&serverTimezone=Asia/Shanghai
+    # username: root
+    # password: changeit
+    initialize: false
+
+# Sa-Token 多端 Token 配置（SRS §3.2 / 设计文档 §3.1）
+sa-token:
+  # 同账号多端同时登录：每个端独立会话，切换角色仅换发当前端 Token
+  is-concurrent: true
+  # 多端 token 互不影响（按 terminal 维度隔离）
+  is-share: false
+  # Token 有效期（秒）：7 天
+  timeout: 604800
+  # 不设活跃续期上限，按业务实际需求调整
+  active-timeout: -1
+  # 同一端是否允许互斥登录：否（允许同端多设备，由业务按端控制）
+  is-read-body: true
+
+logging:
+  level:
+    com.example.mini.multirole: DEBUG
+    cn.dev33.satoken: INFO
